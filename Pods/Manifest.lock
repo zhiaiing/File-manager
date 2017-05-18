@@ -1,0 +1,48 @@
+PODS:
+  - FLAnimatedImage (1.0.12)
+  - FoldingTabBar (1.1.1)
+  - GPUImage (0.1.7)
+  - Masonry (1.0.2)
+  - pop (1.0.9)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SDAutoLayout (2.1.7)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - SDWebImage/GIF (4.0.0):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
+  - TZImagePickerController (1.7.9)
+
+DEPENDENCIES:
+  - FLAnimatedImage
+  - FoldingTabBar
+  - GPUImage
+  - Masonry
+  - pop
+  - ReactiveCocoa (= 2.5)
+  - SDAutoLayout
+  - SDWebImage
+  - SDWebImage/GIF
+  - TZImagePickerController
+
+SPEC CHECKSUMS:
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FoldingTabBar: 3167553a551c52a559778d0015c6c8909c3b34c5
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SDAutoLayout: e9b36d04b8c0b504762a04d76fbbe5108944297a
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  TZImagePickerController: 0a8ff228d287ebdd7d485e8c42a2a932894f1fba
+
+PODFILE CHECKSUM: 96b9b5d7bf22379cbf8f8d8d7a08d463ba53c928
+
+COCOAPODS: 1.0.1
