@@ -11,7 +11,7 @@
 
 #import "FileMangerVideoViewController.h"
 #import "FlieMangerPicViewController.h"
-
+#import "FileManger.h"
 
 @interface FileMangerController ()
 
@@ -104,6 +104,7 @@
 
 
 - (void)setLocalControllers{ //iphone里的
+    
     NSMutableArray *titleArray = [NSMutableArray array];
     [titleArray addObject:@"文档"];
     [titleArray addObject:@"视频"];
@@ -185,6 +186,57 @@
     pageView.unselectedColor = [UIColor blackColor];
     [self.baseScroller addSubview:pageView];
     _pageView2 = pageView;
+}
+
+- (void)aasder{
+    
+    NSArray *array = [[FileManger shareInit] getSdWebImageArr];
+    
+    
+//    
+//    int entryLength = (NSInteger)FICByteAlign(_imageLength + sizeof(FICImageTableEntryMetadata), [FICImageTable pageSize]);
+//    
+//    // Each chunk will map in n entries. Try to keep the chunkLength around 2MB.
+//    NSInteger goalChunkLength = 2 * (1024 * 1024);
+//    NSInteger goalEntriesPerChunk = goalChunkLength / _entryLength;
+//    _entriesPerChunk = MAX(4, goalEntriesPerChunk);
+//    
+//    
+//    if ([self _maximumCount] > [_imageFormat maximumCount]) {
+//        NSString *message = [NSString stringWithFormat:@"*** FIC Warning: growing desired maximumCount (%ld) for format %@ to fill a chunk (%ld)", (long)[_imageFormat maximumCount], [_imageFormat name], (long)[self _maximumCount]];
+//        [self.imageCache _logMessage:message];
+//    }
+//    _chunkLength = (size_t)(_entryLength * _entriesPerChunk);
+//    
+//    _fileLength = lseek(_fileDescriptor, 0, SEEK_END);
+//    _entryCount = (NSInteger)(_fileLength / _entryLength);
+//    _chunkCount = (_entryCount + _entriesPerChunk - 1) / _entriesPerChunk;
+
+    
+    
+  
+    
+    NSArray<NSString *> *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    
+    int  fileDescriptor = open([[paths[0] stringByAppendingPathComponent:@"aaa"] fileSystemRepresentation], O_RDWR | O_CREAT, 0666);
+    
+    if (fileDescriptor >= 0) {
+        NSLog(@"创建并设置文件权限成功 或 权限对应");
+    }else{
+        NSLog(@"权限不对应");
+    }
+}
+
+//取得内存分页大小
++ (int)pageSize {
+    static int __pageSize = 0;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __pageSize = getpagesize();
+    });
+    
+    return __pageSize;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface FileManagerCollectionView : UICollectionView
+
+@property (copy) void (^selectedCollectionViewBlock)(NSIndexPath *indexpath , id data);
 
 @property (nonatomic, strong) NSArray *dataArray;
 

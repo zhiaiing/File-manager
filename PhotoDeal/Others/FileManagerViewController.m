@@ -12,7 +12,10 @@
 #import "FileManagerCollectionView.h"
 
 
-@interface FileManagerViewController ()//<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface FileManagerViewController ()<UINavigationControllerDelegate>//<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+
+
 
 //@property (nonatomic, strong) UICollectionView *collectionView;
 
@@ -28,18 +31,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-  //  NSArray *array = [[FileManger shareInit] getSdWebImageArr];
-    
     NSArray *array = [[FileManger shareInit] readLocalMachineVideo];
     
-    
     [[FileManger shareInit] readLocalMachineMusic];
-    
-//    _fileTableView = [[FileManagerTableView alloc]init];
-//    _fileTableView.frame = CGRectMake(0, 0, 375, 667 - 64);
-//    _fileTableView.dataArray = array;
-//    [self.view addSubview:_fileTableView];
-    
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     CGFloat margin = 4;
@@ -53,6 +47,20 @@
     [self.view addSubview:fileCollectionView];
     _fileCollectionView = fileCollectionView;
     
+    
+    fileCollectionView.selectedCollectionViewBlock = ^(NSIndexPath *indexpath, id data) {
+        BaseViewController *vc      = [BaseViewController new];
+        vc.view.backgroundColor     = [UIColor redColor];
+        //UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+        [self.navigationController pushViewController:vc animated:YES];
+
+//        [self presentViewController:nav animated:YES completion:^{
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                [vc dismissViewControllerAnimated:YES completion:nil];
+//            });
+//        }];
+    };
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,14 +68,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UIViewControllerAnimatedTransitioning
+- (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext{
+    return 10;
 }
-*/
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
 
 @end

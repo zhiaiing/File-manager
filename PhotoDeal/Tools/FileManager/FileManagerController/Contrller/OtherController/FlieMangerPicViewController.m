@@ -40,10 +40,26 @@
     NSArray *array;
     
     if ([self.picType isEqualToString:@"0"]) {//本机(iphone)视频
-        array = [[FileManger shareInit] readLocalMachinePic];
+      //  array = [[FileManger shareInit] readLocalMachinePic];
+        
+        NSMutableArray *att = [NSMutableArray array];
+        NSArray *arrays = [[FileManger shareInit] readLocalMachinePic];
+        
+        for (int i = 0; i < 100; i++) {
+            [att addObjectsFromArray:arrays];
+        }
+        
+        array = att;
  
     }else {
-        array = [[FileManger shareInit] getSdWebImageArr];
+        NSMutableArray *att = [NSMutableArray array];
+        NSArray *arrays = [[FileManger shareInit] getSdWebImageArr];
+        
+        for (int i = 0; i < 100; i++) {
+            [att addObjectsFromArray:arrays];
+        }
+
+        array = att;
     }
     
     self.fileCollectionView.dataArray = array;

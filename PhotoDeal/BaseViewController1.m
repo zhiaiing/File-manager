@@ -18,6 +18,7 @@
 #import "TZAssetModel.h"
 #import "FileMangerController.h"
 #import "ViewController.h"
+#import "BaseAnimateViewController.h"
 
 @interface BaseViewController1 ()
 
@@ -40,7 +41,7 @@
     
     
     FileManagerViewController *viewController2 = [[FileManagerViewController alloc]init];
-    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
+    BaseAnimateViewController *nav2 = [[BaseAnimateViewController alloc]initWithRootViewController:viewController2];
     viewController2.title = @"222";
     
     

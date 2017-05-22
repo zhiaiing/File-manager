@@ -77,6 +77,9 @@
         cell.model1 = model;
     }
     
+    
+    
+    
     return cell;
 }
 
@@ -99,6 +102,13 @@
     
     FileManagerCollectionViewCell *cell = (FileManagerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cell.isSelected = isSelected;
+    
+    if (isSelected) {
+        if (_selectedCollectionViewBlock) {
+            _selectedCollectionViewBlock(indexPath, nil);
+        }
+    }
+    
 }
 
 

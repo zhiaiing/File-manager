@@ -29,6 +29,9 @@
 		04607FC31EC2B63300DFE5E9 /* PhotoDealUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04607FC21EC2B63300DFE5E9 /* PhotoDealUITests.m */; };
 		04607FED1EC2E36000DFE5E9 /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 04607FEB1EC2E36000DFE5E9 /* Shader1.fsh */; };
 		04607FEE1EC2E36000DFE5E9 /* Shader2.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 04607FEC1EC2E36000DFE5E9 /* Shader2.fsh */; };
+		046440691ECED512003EB444 /* BaseAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046440681ECED512003EB444 /* BaseAnimateViewController.m */; };
+		0464406C1ECED532003EB444 /* AnimateDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464406B1ECED532003EB444 /* AnimateDelegate.m */; };
+		0464406F1ECEE09F003EB444 /* LYNavBaseCustomAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464406E1ECEE09F003EB444 /* LYNavBaseCustomAnimator.m */; };
 		049924671EC4002600060A9F /* LMBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 049924551EC4002600060A9F /* LMBeautifyFilter.m */; };
 		049924681EC4002600060A9F /* LMCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 049924571EC4002600060A9F /* LMCameraManager.m */; };
 		049924691EC4002600060A9F /* LMCameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0499245A1EC4002600060A9F /* LMCameraFilters.m */; };
@@ -107,6 +110,12 @@
 		04607FC41EC2B63300DFE5E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04607FEB1EC2E36000DFE5E9 /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader1.fsh; sourceTree = "<group>"; };
 		04607FEC1EC2E36000DFE5E9 /* Shader2.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader2.fsh; sourceTree = "<group>"; };
+		046440671ECED512003EB444 /* BaseAnimateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAnimateViewController.h; sourceTree = "<group>"; };
+		046440681ECED512003EB444 /* BaseAnimateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAnimateViewController.m; sourceTree = "<group>"; };
+		0464406A1ECED532003EB444 /* AnimateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimateDelegate.h; sourceTree = "<group>"; };
+		0464406B1ECED532003EB444 /* AnimateDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimateDelegate.m; sourceTree = "<group>"; };
+		0464406D1ECEE09F003EB444 /* LYNavBaseCustomAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYNavBaseCustomAnimator.h; sourceTree = "<group>"; };
+		0464406E1ECEE09F003EB444 /* LYNavBaseCustomAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYNavBaseCustomAnimator.m; sourceTree = "<group>"; };
 		049924541EC4002600060A9F /* LMBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMBeautifyFilter.h; sourceTree = "<group>"; };
 		049924551EC4002600060A9F /* LMBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMBeautifyFilter.m; sourceTree = "<group>"; };
 		049924561EC4002600060A9F /* LMCameraManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCameraManager.h; sourceTree = "<group>"; };
@@ -321,6 +330,10 @@
 		04607F9D1EC2B63300DFE5E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				046440671ECED512003EB444 /* BaseAnimateViewController.h */,
+				046440681ECED512003EB444 /* BaseAnimateViewController.m */,
+				0464406A1ECED532003EB444 /* AnimateDelegate.h */,
+				0464406B1ECED532003EB444 /* AnimateDelegate.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -412,6 +425,8 @@
 				0499247D1EC437AE00060A9F /* main.m */,
 				0499247B1EC437AE00060A9F /* AppDelegate.h */,
 				0499247C1EC437AE00060A9F /* AppDelegate.m */,
+				0464406D1ECEE09F003EB444 /* LYNavBaseCustomAnimator.h */,
+				0464406E1ECEE09F003EB444 /* LYNavBaseCustomAnimator.m */,
 				049924801EC43CAE00060A9F /* PrefixHeader.pch */,
 				0424212C1EC557FA00AA9308 /* FileManagerViewController.h */,
 				0424212D1EC557FA00AA9308 /* FileManagerViewController.m */,
@@ -632,14 +647,17 @@
 				041AD6C91EC93B2900663776 /* FileManger.m in Sources */,
 				049924751EC40FB100060A9F /* BaseTabbar.m in Sources */,
 				04607FA51EC2B63300DFE5E9 /* ViewController.m in Sources */,
+				046440691ECED512003EB444 /* BaseAnimateViewController.m in Sources */,
 				041AD7001ECAE12500663776 /* BaseViewController.m in Sources */,
 				041AD6FC1ECADE9A00663776 /* UIColor+Add.m in Sources */,
 				041AD6E31ECAC04F00663776 /* FlieManagerTableViewCell.m in Sources */,
 				041AD6DD1EC9A57F00663776 /* LocalPicModel.m in Sources */,
 				0499246A1EC4002600060A9F /* LMFilterGroup.m in Sources */,
 				049924671EC4002600060A9F /* LMBeautifyFilter.m in Sources */,
+				0464406C1ECED532003EB444 /* AnimateDelegate.m in Sources */,
 				041AD6D71EC9904C00663776 /* FileManagerCollectionView.m in Sources */,
 				049924681EC4002600060A9F /* LMCameraManager.m in Sources */,
+				0464406F1ECEE09F003EB444 /* LYNavBaseCustomAnimator.m in Sources */,
 				0499246D1EC4002600060A9F /* LMFilterChooserViewCell.m in Sources */,
 				0499247E1EC437AE00060A9F /* AppDelegate.m in Sources */,
 				041AD6DA1EC990F900663776 /* FileManagerCollectionViewCell.m in Sources */,
